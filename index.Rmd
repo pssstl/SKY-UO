@@ -74,8 +74,8 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
   theme_minimal(base_size = 15)  + 
   theme(panel.grid.minor = element_line(linetype = "blank")) +
   guides(fill = "none")+
-  geom_text(data=OH0[1,], aes(label=Gender), hjust=0)+
-  geom_text(data=OH0[2,], aes(label=Gender), hjust =2)
+  geom_text(data = OH0[1,], aes(label = Gender), hjust = 0, color = "gray40")+
+  geom_text(data = OH0[2,], aes(label = Gender), hjust = 2, color = "gray40")
 
 ```
 
@@ -276,11 +276,10 @@ Column {.tabset}
 SKY2 <- import(here("data", "SKY2.xlsx"), setclass = "tbl_df") 
 
 SKY2 %>% 
-  kable(caption = "The SKY Happiness Retreat impacts various domains of life") %>% 
+  kable(caption = "The SKY Happiness Retreat impacts various domains of life. Numbers are in percentages.") %>% 
    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive", full_width = NULL, position = "left")) %>% 
   column_spec(6:6, bold = T, color = "#3A9E23", background = "#F8F668") %>%
-   footnote(general = "The participants were asked to rate how the techniques taught in the SKY Happiness Retreat have the ability to impact different areas.",
-            number = c("Numbers are in percentage"))
+   footnote(general = "The participants were asked to rate how the techniques taught in the SKY Happiness Retreat have the ability to impact different areas.")
 
 ```
 
