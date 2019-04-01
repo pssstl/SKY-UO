@@ -44,7 +44,7 @@ theme_set(theme_minimal(base_size = 8))
 
 Sidebar Title {.sidebar}
 --------
-The following visualizations are based on two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus.
+These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -84,7 +84,7 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
 
 Sidebar Title {.sidebar}
 --------
-The following visualizations are based on two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus.
+These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -160,7 +160,7 @@ experience_df  %>%
 
 Sidebar Title {.sidebar}
 --------
-The following visualizations are based on two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus.
+These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 Column {.tabset}
@@ -223,7 +223,7 @@ SKY2 %>%
 
 Sidebar Title {.sidebar}
 --------
-The following visualizations are based on two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. 
+These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
