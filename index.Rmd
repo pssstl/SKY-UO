@@ -33,7 +33,6 @@ library("tidytext")
 library("kableExtra")
 library("formattable")
 library("flextable")
-library(fcuk)
 library(emojifont)
 library(devtools)
 
@@ -44,7 +43,7 @@ theme_set(theme_minimal(base_size = 8))
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
+These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -84,7 +83,7 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
+These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -115,9 +114,11 @@ experience <- c("I thought it was positive and powerful",
                 "Pretty amazing",
                 "Amazing",
                 "I enjoyed it",
-                "It was great")
+                "It was great",
+                "Calming effect, immediate change in how to deal with my life. Exciting to learn everything. Opening",
+                "It was my first time attending SKY Happiness Retreat. I felt great, new and satisfied after this progress. Sara and Ting-fen shared their wisdom of how to live a happier and more peaceful life and how to attain a joyful state of mind. I am grateful for what I've learned from them")
 
-experience_df <- tibble(line = 1:21, text = experience)
+experience_df <- tibble(line = 1:23, text = experience)
 
 experience_df <- experience_df %>%
   unnest_tokens(word, text)
@@ -126,10 +127,12 @@ data(stop_words)
 
 experience_df <- experience_df %>%
   anti_join(stop_words) %>% 
-  filter(word != "feel" & word != "experience")
-# 
-# experience_df %>%
-#   count(word, sort = TRUE) 
+  filter(word != "feel" & word != "experience" & word != "ting" & word != "time" 
+         & word != "fen" & word != "learned" & word != "life" & word != "retreat"
+         & word != "experience")
+
+ #experience_df %>%
+ #count(word, sort = TRUE) 
 
 
 experience_df  %>%
@@ -152,6 +155,8 @@ experience_df  %>%
     theme_minimal(base_size = 15)  + 
   theme(panel.grid.minor = element_line(linetype = "blank")) +
   guides(fill = "none") 
+
+
 ```
 
 
@@ -160,7 +165,7 @@ experience_df  %>%
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
+These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 Column {.tabset}
@@ -168,9 +173,12 @@ Column {.tabset}
 
 
 ```{r table}
+
+SKY <- import(here("data", "survey.xlsx"), setclass = "tbl_df") 
+
 # SKY %>%
 #   count(energy) %>%
-#   mutate(prop = 100*n/sum(n-1)) 
+#   mutate(prop = 100*n/sum(n-1))
 # 
 # SKY %>%
 #   count(clarity_mind) %>%
@@ -179,7 +187,7 @@ Column {.tabset}
 # SKY %>%
 #   count(multiple_responsibilities) %>%
 #   mutate(prop = 100*n/sum(n-1))
-#   
+# 
 # SKY %>%
 #   count(connect_to_myself) %>%
 #   mutate(prop = 100*n/sum(n-1))
@@ -205,6 +213,8 @@ Column {.tabset}
 #   count(connect_with_others) %>%
 #   mutate(prop = 100*n/sum(n-1))
 
+
+
 SKY2 <- import(here("data", "SKY2.xlsx"), setclass = "tbl_df") 
 
 SKY2 %>% 
@@ -223,7 +233,7 @@ SKY2 %>%
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from two Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 3/30/2019
+These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
