@@ -62,8 +62,8 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
   geom_col(aes(fill = Gender),
            color = "white",
            alpha = 0.7) +
-  scale_y_continuous(breaks = seq(0, 11, by = 1),
-                     limits = c(0, 10.25)) +
+  scale_y_continuous(breaks = seq(0, 12, by = 1),
+                     limits = c(0, 12.25)) +
   scale_fill_OkabeIto() +
   coord_flip(expand = FALSE) +
   labs(x = "",
