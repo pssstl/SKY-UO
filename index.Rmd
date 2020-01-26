@@ -43,7 +43,7 @@ theme_set(theme_minimal(base_size = 8))
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
+These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -62,8 +62,8 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
   geom_col(aes(fill = Gender),
            color = "white",
            alpha = 0.7) +
-  scale_y_continuous(breaks = seq(0, 12, by = 1),
-                     limits = c(0, 12.25)) +
+  scale_y_continuous(breaks = seq(0, 14, by = 1),
+                     limits = c(0, 14)) +
   scale_fill_OkabeIto() +
   coord_flip(expand = FALSE) +
   labs(x = "",
@@ -72,7 +72,7 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
   theme_minimal(base_size = 15)  + 
   theme(panel.grid.minor = element_line(linetype = "blank")) +
   guides(fill = "none")+
-  geom_text(data = OH0[1,], aes(label = Gender), hjust = 0, color = "gray40")+
+  geom_text(data = OH0[1,], aes(label = Gender), hjust = 1, color = "gray40")+
   geom_text(data = OH0[2,], aes(label = Gender), hjust = 2, color = "gray40")
 
 ```
@@ -83,7 +83,7 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
+These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -116,9 +116,15 @@ experience <- c("I thought it was positive and powerful",
                 "I enjoyed it",
                 "It was great",
                 "Calming effect, immediate change in how to deal with my life. Exciting to learn everything. Opening",
-                "It was my first time attending SKY Happiness Retreat. I felt great, new and satisfied after this progress. Sara and Ting-fen shared their wisdom of how to live a happier and more peaceful life and how to attain a joyful state of mind. I am grateful for what I've learned from them")
+                "It was my first time attending SKY Happiness Retreat. I felt great, new and satisfied after this progress. Sara and Ting-fen shared their wisdom of how to live a happier and more peaceful life and how to attain a joyful state of mind. I am grateful for what I've learned from them",
+                "Life changing. The breathing exercises really have helped center me",
+                "Amazing",
+                "Wonderful",
+                "Exciting and grounding",
+                "Needed",
+                "It was an open and calm experience that helped with my anxiety")
 
-experience_df <- tibble(line = 1:23, text = experience)
+experience_df <- tibble(line = 1:29, text = experience)
 
 experience_df <- experience_df %>%
   unnest_tokens(word, text)
@@ -143,7 +149,7 @@ experience_df  %>%
   ggplot(aes(word, n)) +
   geom_col(fill = "cornflowerblue",
            alpha = 0.7) +
-  scale_y_continuous(breaks = seq(0, 11, by = 1),
+  scale_y_continuous(breaks = seq(0, 20, by = 1),
                      limits = c(0, 5.25)) +
   xlab(NULL) +
   coord_flip() + 
@@ -165,7 +171,7 @@ experience_df  %>%
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
+These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 Column {.tabset}
@@ -233,7 +239,7 @@ SKY2 %>%
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past three Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 5/1/2019
+These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -248,7 +254,7 @@ SKY <- import(here("data", "survey.xlsx"), setclass = "tbl_df")
 ggplot(SKY, aes(Recommend)) +
   geom_dotplot(aes(fill = Category), 
                stackgroups = TRUE,
-               binwidth = .4) +
+               binwidth = .3) +
   scale_fill_OkabeIto(name = "") +
   scale_x_continuous(breaks = 0:6, limits = c(0, 6),
                      labels=c("0" = "", 
@@ -259,10 +265,10 @@ ggplot(SKY, aes(Recommend)) +
                               "5" = "Strongly Agree",
                               "6" = "")) +
   scale_y_continuous(labels=c("0.00" = "0", 
-                              "0.25" = "6",
-                              "0.50" = "12", 
-                              "0.75" = "18",
-                              "1.00" = "24")) +
+                              "0.25" = "7",
+                              "0.50" = "14", 
+                              "0.75" = "21",
+                              "1.00" = "28")) +
    coord_flip(expand = FALSE) +
    theme_minimal(base_size = 10) +
   theme(panel.grid.minor = element_line(linetype = "blank")) +
