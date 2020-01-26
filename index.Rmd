@@ -70,10 +70,8 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
        y = "Number of participants",
        title = "Participant Distribution") +
   theme_minimal(base_size = 15)  + 
-  theme(panel.grid.minor = element_line(linetype = "blank")) +
-  guides(fill = "none")+
-  geom_text(data = OH0[1,], aes(label = Gender), hjust = 1, color = "gray40")+
-  geom_text(data = OH0[2,], aes(label = Gender), hjust = 2, color = "gray40")
+  theme(panel.grid.minor = element_line(linetype = "blank")) 
+ 
 
 ```
 
