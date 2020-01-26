@@ -224,7 +224,7 @@ SKY2 <- import(here("data", "SKY2.xlsx"), setclass = "tbl_df")
 SKY2 %>% 
   kable(caption = "The SKY Happiness Retreat impacts various domains of life. Numbers are in percentages.") %>% 
    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive", full_width = NULL, position = "left")) %>% 
-  column_spec(6:6, bold = T, color = "#3A9E23", background = "#F8F668") %>%
+  column_spec(6:6, bold = T, color = "#5713a3", background = "#F8F668") %>%
    footnote(general = "The participants were asked to rate how the techniques taught in the SKY Happiness Retreat have the ability to impact different areas.")
 
 ```
