@@ -1,5 +1,5 @@
 ---
-title: "UO Happiness Retreat Outcome Survey"
+title: "SKY Happiness Retreat @UO - Outcome Survey"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -43,7 +43,7 @@ theme_set(theme_minimal(base_size = 8))
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
+These visualizations are based on the outcome surveys from the past 4 SKY Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -84,7 +84,7 @@ ggplot(OH0, aes(x = fct_reorder(Category, n), n)) +
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
+These visualizations are based on the outcome surveys from the past 4 SKY Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
@@ -172,7 +172,7 @@ experience_df  %>%
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
+These visualizations are based on the outcome surveys from the past 4 SKY Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 Column {.tabset}
@@ -240,7 +240,7 @@ SKY2 %>%
 
 Sidebar Title {.sidebar}
 --------
-These visualizations are based on the exit surveys from the past 4 Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
+These visualizations are based on the outcome surveys from the past 4 SKY Happiness Retreats at UO. Student health and wellness are important to success in life and academia. We are excited to continue spreading positivity across campus. Updated 1/25/2020
 `r emo::ji("star")` `r emo::ji("star2")` `r emo::ji("star")` 
 
 
